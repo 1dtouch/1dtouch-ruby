@@ -31,8 +31,6 @@ RUN apt-get update && \
     echo 'eval "$(rbenv init -)"' >> /root/.bashrc && \
     rbenv install $INSTALL_RUBY_VERSION && \
     rbenv global $INSTALL_RUBY_VERSION && \
-    gem install bundler \
-                foreman \
-                execjs && \
+    gem install bundler foreman execjs eventmachine http_parser ffi puma nokogiri capybara-webkit && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
